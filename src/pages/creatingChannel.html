@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <include src="src/templates/head.html" locals='{"title": "Створення плану каналу для того, щоб уникнути інтермодуляційних перешкод третього порядку та інструменту проблеми «близько далеко»."}'></include>
+</head>
+
+<body>
+  <include src="src/templates/header.html"></include>
+  <main>
+    <div class="wrapper">
+      <include src="src/templates/toolsList.html"></include>
+      <div class="entry">
+        <h2 class="entry-title">Створення плану каналу для того, щоб уникнути інтермодуляційних перешкод третього порядку та інструменту проблеми «близько далеко».</h2>
+        <p>За допомогою цього інструменту можна створити план каналу з урахуванням інтермодуляційних перешкод третього порядку та близької проблеми</p>
+        <div class="conts pt20">
+          <div id="cd-channelplan-container">
+            <div>
+              <select id="cd-channelplan-selecthz">
+                <option value="_426">Японія: 426 МГц</option>
+                <option value="_429" selected="">Японія: 429 МГц</option>
+                <option value="_449">Японія: 449 МГц</option>
+                <option value="_469">Японія: 469 МГц</option>
+                <option value="_800">Японія: 800 МГц</option>
+                <option value="_800">Японія: 800 МГц</option>
+                <option value="_1216">Японія: 1216 МГц</option>
+                <option value="_1252">Японія: 1252 МГц</option>
+                <option value="_EU434">ЄС: 434 МГц</option>
+                <option value="_EU863">ЄС: 863 МГц</option>
+                <option value="_EU869">ЄС: 869 МГц</option>
+                <option value="_UK458">Великобританія: 458 МГц</option>
+                <option value="_KR447">Корея: 447 МГц</option>
+                <option value="_CH418">Китай: 418 МГц</option>
+                <option value="_2400">Світ: 2.4 ГГц</option>
+              </select>
+            </div>
+            <div>
+              <select id="cd-channelplan-selectvalue">
+                <option value="0">429.2500 - 429.7375 МГц, 12.5 кГц, 7 - 46 ch</option>
+                <option value="1">429.1750 - 429.7375 МГц, 12.5 кГц, 1 - 46 ch</option>
+                <option value="2">429.8125 - 429.9250 МГц, 12.5 кГц, 1 - 10 ch</option>
+              </select>
+            </div>
+            <br>
+            <div>
+              <p>Початок каналу&nbsp;
+                <input type="numer" class="cd-channelplan-baseval" id="cd-channelplan-startCh" value="7">
+              </p>
+            </div>
+            <div>
+              <p>Кiнець каналу&nbsp;
+                <input type="numer" class="cd-channelplan-baseval" id="cd-channelplan-endCh" value="46">
+              </p>
+            </div>
+            <div>
+              <p>Частота&nbsp;
+                <input type="numer" class="cd-channelplan-baseval" id="cd-channelplan-helz" value="429.25">&nbsp; МГц</p>
+            </div>
+            <div>
+              <p>Розмах каналу&nbsp;
+                <input type="numer" class="cd-channelplan-baseval" id="cd-channelplan-span" value="12.5">&nbsp;кГц</p>
+            </div>
+            <div>
+              <p>
+                <input type="checkbox" id="cd-channelplan-sidecheck" value="1" checked="checked">&nbsp;
+Вимкнути вибір сусіднього каналу</p>
+            </div>
+            <div>
+              <p>
+                <button id="cd-channelplan-clearbutton">Ініціалізація
+                  <p></p>
+                </button>
+              </p>
+            </div>
+            <div id="cd-channelplan-channelselect">
+              <table id="channelselect">
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label0">
+                        <input class="cd-channelplan-chsel" name="in0" value="0" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label25">
+                        <input class="cd-channelplan-chsel" name="in25" value="25" type="checkbox"><span class="helt">[25]429.4750</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label50">
+                        <input class="cd-channelplan-chsel" name="in50" value="50" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label75">
+                        <input class="cd-channelplan-chsel" name="in75" value="75" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label1">
+                        <input class="cd-channelplan-chsel" name="in1" value="1" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label26">
+                        <input class="cd-channelplan-chsel" name="in26" value="26" type="checkbox"><span class="helt">[26]429.4875</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label51">
+                        <input class="cd-channelplan-chsel" name="in51" value="51" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label76">
+                        <input class="cd-channelplan-chsel" name="in76" value="76" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label2">
+                        <input class="cd-channelplan-chsel" name="in2" value="2" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label27">
+                        <input class="cd-channelplan-chsel" name="in27" value="27" type="checkbox"><span class="helt">[27]429.5000</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label52">
+                        <input class="cd-channelplan-chsel" name="in52" value="52" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label77">
+                        <input class="cd-channelplan-chsel" name="in77" value="77" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label3">
+                        <input class="cd-channelplan-chsel" name="in3" value="3" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label28">
+                        <input class="cd-channelplan-chsel" name="in28" value="28" type="checkbox"><span class="helt">[28]429.5125</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label53">
+                        <input class="cd-channelplan-chsel" name="in53" value="53" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label78">
+                        <input class="cd-channelplan-chsel" name="in78" value="78" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label4">
+                        <input class="cd-channelplan-chsel" name="in4" value="4" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label29">
+                        <input class="cd-channelplan-chsel" name="in29" value="29" type="checkbox"><span class="helt">[29]429.5250</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label54">
+                        <input class="cd-channelplan-chsel" name="in54" value="54" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label79">
+                        <input class="cd-channelplan-chsel" name="in79" value="79" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label5">
+                        <input class="cd-channelplan-chsel" name="in5" value="5" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label30">
+                        <input class="cd-channelplan-chsel" name="in30" value="30" type="checkbox"><span class="helt">[30]429.5375</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label55">
+                        <input class="cd-channelplan-chsel" name="in55" value="55" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label80">
+                        <input class="cd-channelplan-chsel" name="in80" value="80" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label6">
+                        <input class="cd-channelplan-chsel" name="in6" value="6" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label31">
+                        <input class="cd-channelplan-chsel" name="in31" value="31" type="checkbox"><span class="helt">[31]429.5500</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label56">
+                        <input class="cd-channelplan-chsel" name="in56" value="56" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label81">
+                        <input class="cd-channelplan-chsel" name="in81" value="81" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label7">
+                        <input class="cd-channelplan-chsel" name="in7" value="7" type="checkbox"><span class="helt">[7]429.2500</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label32">
+                        <input class="cd-channelplan-chsel" name="in32" value="32" type="checkbox"><span class="helt">[32]429.5625</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label57">
+                        <input class="cd-channelplan-chsel" name="in57" value="57" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label82">
+                        <input class="cd-channelplan-chsel" name="in82" value="82" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label8">
+                        <input class="cd-channelplan-chsel" name="in8" value="8" type="checkbox"><span class="helt">[8]429.2625</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label33">
+                        <input class="cd-channelplan-chsel" name="in33" value="33" type="checkbox"><span class="helt">[33]429.5750</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label58">
+                        <input class="cd-channelplan-chsel" name="in58" value="58" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label83">
+                        <input class="cd-channelplan-chsel" name="in83" value="83" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label9">
+                        <input class="cd-channelplan-chsel" name="in9" value="9" type="checkbox"><span class="helt">[9]429.2750</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label34">
+                        <input class="cd-channelplan-chsel" name="in34" value="34" type="checkbox"><span class="helt">[34]429.5875</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label59">
+                        <input class="cd-channelplan-chsel" name="in59" value="59" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label84">
+                        <input class="cd-channelplan-chsel" name="in84" value="84" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label10">
+                        <input class="cd-channelplan-chsel" name="in10" value="10" type="checkbox"><span class="helt">[10]429.2875</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label35">
+                        <input class="cd-channelplan-chsel" name="in35" value="35" type="checkbox"><span class="helt">[35]429.6000</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label60">
+                        <input class="cd-channelplan-chsel" name="in60" value="60" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label85">
+                        <input class="cd-channelplan-chsel" name="in85" value="85" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label11">
+                        <input class="cd-channelplan-chsel" name="in11" value="11" type="checkbox"><span class="helt">[11]429.3000</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label36">
+                        <input class="cd-channelplan-chsel" name="in36" value="36" type="checkbox"><span class="helt">[36]429.6125</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label61">
+                        <input class="cd-channelplan-chsel" name="in61" value="61" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label86">
+                        <input class="cd-channelplan-chsel" name="in86" value="86" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label12">
+                        <input class="cd-channelplan-chsel" name="in12" value="12" type="checkbox"><span class="helt">[12]429.3125</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label37">
+                        <input class="cd-channelplan-chsel" name="in37" value="37" type="checkbox"><span class="helt">[37]429.6250</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label62">
+                        <input class="cd-channelplan-chsel" name="in62" value="62" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label87">
+                        <input class="cd-channelplan-chsel" name="in87" value="87" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label13">
+                        <input class="cd-channelplan-chsel" name="in13" value="13" type="checkbox"><span class="helt">[13]429.3250</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label38">
+                        <input class="cd-channelplan-chsel" name="in38" value="38" type="checkbox"><span class="helt">[38]429.6375</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label63">
+                        <input class="cd-channelplan-chsel" name="in63" value="63" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label88">
+                        <input class="cd-channelplan-chsel" name="in88" value="88" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label14">
+                        <input class="cd-channelplan-chsel" name="in14" value="14" type="checkbox"><span class="helt">[14]429.3375</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label39">
+                        <input class="cd-channelplan-chsel" name="in39" value="39" type="checkbox"><span class="helt">[39]429.6500</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label64">
+                        <input class="cd-channelplan-chsel" name="in64" value="64" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label89">
+                        <input class="cd-channelplan-chsel" name="in89" value="89" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label15">
+                        <input class="cd-channelplan-chsel" name="in15" value="15" type="checkbox"><span class="helt">[15]429.3500</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label40">
+                        <input class="cd-channelplan-chsel" name="in40" value="40" type="checkbox"><span class="helt">[40]429.6625</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label65">
+                        <input class="cd-channelplan-chsel" name="in65" value="65" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label90">
+                        <input class="cd-channelplan-chsel" name="in90" value="90" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label16">
+                        <input class="cd-channelplan-chsel" name="in16" value="16" type="checkbox"><span class="helt">[16]429.3625</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label41">
+                        <input class="cd-channelplan-chsel" name="in41" value="41" type="checkbox"><span class="helt">[41]429.6750</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label66">
+                        <input class="cd-channelplan-chsel" name="in66" value="66" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label91">
+                        <input class="cd-channelplan-chsel" name="in91" value="91" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label17">
+                        <input class="cd-channelplan-chsel" name="in17" value="17" type="checkbox"><span class="helt">[17]429.3750</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label42">
+                        <input class="cd-channelplan-chsel" name="in42" value="42" type="checkbox"><span class="helt">[42]429.6875</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label67">
+                        <input class="cd-channelplan-chsel" name="in67" value="67" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label92">
+                        <input class="cd-channelplan-chsel" name="in92" value="92" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label18">
+                        <input class="cd-channelplan-chsel" name="in18" value="18" type="checkbox"><span class="helt">[18]429.3875</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label43">
+                        <input class="cd-channelplan-chsel" name="in43" value="43" type="checkbox"><span class="helt">[43]429.7000</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label68">
+                        <input class="cd-channelplan-chsel" name="in68" value="68" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label93">
+                        <input class="cd-channelplan-chsel" name="in93" value="93" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label19">
+                        <input class="cd-channelplan-chsel" name="in19" value="19" type="checkbox"><span class="helt">[19]429.4000</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label44">
+                        <input class="cd-channelplan-chsel" name="in44" value="44" type="checkbox"><span class="helt">[44]429.7125</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label69">
+                        <input class="cd-channelplan-chsel" name="in69" value="69" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label94">
+                        <input class="cd-channelplan-chsel" name="in94" value="94" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label20">
+                        <input class="cd-channelplan-chsel" name="in20" value="20" type="checkbox"><span class="helt">[20]429.4125</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label45">
+                        <input class="cd-channelplan-chsel" name="in45" value="45" type="checkbox"><span class="helt">[45]429.7250</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label70">
+                        <input class="cd-channelplan-chsel" name="in70" value="70" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label95">
+                        <input class="cd-channelplan-chsel" name="in95" value="95" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label21">
+                        <input class="cd-channelplan-chsel" name="in21" value="21" type="checkbox"><span class="helt">[21]429.4250</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label46">
+                        <input class="cd-channelplan-chsel" name="in46" value="46" type="checkbox"><span class="helt">[46]429.7375</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label71">
+                        <input class="cd-channelplan-chsel" name="in71" value="71" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label96">
+                        <input class="cd-channelplan-chsel" name="in96" value="96" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label22">
+                        <input class="cd-channelplan-chsel" name="in22" value="22" type="checkbox"><span class="helt">[22]429.4375</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label47">
+                        <input class="cd-channelplan-chsel" name="in47" value="47" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label72">
+                        <input class="cd-channelplan-chsel" name="in72" value="72" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label97">
+                        <input class="cd-channelplan-chsel" name="in97" value="97" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label23">
+                        <input class="cd-channelplan-chsel" name="in23" value="23" type="checkbox"><span class="helt">[23]429.4500</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label48">
+                        <input class="cd-channelplan-chsel" name="in48" value="48" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label73">
+                        <input class="cd-channelplan-chsel" name="in73" value="73" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label98">
+                        <input class="cd-channelplan-chsel" name="in98" value="98" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="channel" id="label24">
+                        <input class="cd-channelplan-chsel" name="in24" value="24" type="checkbox"><span class="helt">[24]429.4625</span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label49">
+                        <input class="cd-channelplan-chsel" name="in49" value="49" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label74">
+                        <input class="cd-channelplan-chsel" name="in74" value="74" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                    <td>
+                      <label class="channel" id="label99">
+                        <input class="cd-channelplan-chsel" name="in99" value="99" type="checkbox" disabled=""><span class="helt"></span></label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <h2>Як використовувати цей інструмент для створення плану каналу, щоб уникнути інтермодуляційних перешкод третього порядку та проблеми близько-далеко.</h2>
+        <p>У невеликій області, де використовується кілька каналів, необхідно враховувати інтермодуляційні перешкоди третього порядку та проблему близько-далеко. Використовуючи цей інструмент і вибравши діапазон і канал, можна створити план каналу, який враховує це.</p>
+        <div class="enter-img"><p><img loading="lazy" class="alignnone wp-image-640 size-full" src="img/6.png" alt="" width="619" height="663">
+        </p></div>
+        <p class="box-mt40">На діаграмі вище ми можемо вибрати канали 8, 10 і 13. Якщо ми також виберемо канал 16, інструмент повідомить, що канали 10, 13 і 16 вибрані як помилкові (виділені червоним). Якщо створюється більше каналів, необхідно уникати вибору заборонених каналів (виділено жовтим кольором) і замість цього вибрати канали, які не виділені.</p>
+        <p>Наприклад, канали 1-70 в діапазоні 434 МГц містять 70 каналів. Ви не можете використовувати всі ці канали разом.</p>
+        <h3>Інтермодуляція третього порядку</h3>
+        <p>При використанні кількох каналів в одній зоні спотворення, спричинене нелінійністю в приймачі, дозволяють хвилям об’єднуватися, утворюючи свої суми та розходження. Це створює інтермодуляцію. У межах тієї самої смуги частот з продуктів 3-го (IM3), 5-го (IM5) та 7-го (IM7) тощо необхідно звернути увагу на 3-й (IM3) продукт.</p>
+        <div class="enter-img"><p><img loading="lazy" class="alignnone wp-image-645 size-full" src="img/7.png" alt="" width="640" height="354">
+        </p></div>
+        <h3>Проблема близько-далеко</h3>
+        <p>При отриманні віддаленого сигналу, передавач поблизу в тій же зоні, що спілкується на подібній частоті, може перешкодити прийому віддаленого сигналу. Тому необхідно використати іншу частоту або відійти далі від передавача перешкод.</p>
+      </div>
+    </div>
+  </main>
+  <include src="src/templates/footer.html"></include>
+</body>
+</html>

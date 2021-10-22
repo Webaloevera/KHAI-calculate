@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <include src="src/templates/head.html" locals='{"title": "
+Взаємне перетворення значення децибел і справжнього значення"}'></include>
+</head>
+<body>
+  <include src="src/templates/header.html"></include>
+  <main>
+    <div class="wrapper">
+      <include src="src/templates/toolsList.html"></include>
+      <div class="entry">
+        <h2 class="entry-title">
+Взаємне перетворення значення децибел і справжнього значення</h2>
+        <div id="cd-mutualconversion-container">
+          <div class="toggle-buttons">
+            <label>
+              <input type="radio" name="cd-mutualconv-radio" class="cd-mutualconv-plugin-mode" checked="checked" value="50">
+              <span class="button">50Ω</span>
+            </label>
+            <label>
+              <input type="radio" name="cd-mutualconv-radio" class="cd-mutualconv-plugin-mode" value="75">
+              <span class="button">75Ω</span>
+            </label>
+            <label>
+              <input type="radio" name="cd-mutualconv-radio" class="cd-mutualconv-plugin-mode" value="600">
+              <span class="button">600Ω</span>
+            </label>
+          </div>
+
+          <div class="scroll">
+            <table class="tbl-r07">
+              <tbody>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>Напруга</th>
+                  <th>Потужність</th>
+                  <th>дБ Напруга</th>
+                  <th>дБ Потужність</th>
+                </tr>
+                <tr>
+                  <th nowrap="nowrap">Напруга</th>
+                  <td>
+                    <input type="nubmer" class="cd-mutualconv-plugin-value" id="cd-mutualconv-volt" value="1">
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectvolt">
+                      <option value="-12">pV</option>
+                      <option value="-9">nV</option>
+                      <option value="-6">μV</option>
+                      <option value="-3" selected="">mV</option>
+                      <option value="0">V</option>
+                    </select>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-volt0">3</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-power0">1.500e-5</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbvolt0">9.54</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbpower0">-48.24</output>
+                  </td>
+                </tr>
+                <tr>
+                  <th nowrap="nowrap">Потужність</th>
+                  <td>
+                    <input type="nubmer" class="cd-mutualconv-plugin-value" id="cd-mutualconv-power" value="1">
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectpower">
+                      <option value="-12">pW</option>
+                      <option value="-9">nW</option>
+                      <option value="-6">μW</option>
+                      <option value="-3" selected="">mW</option>
+                      <option value="0">W</option>
+                    </select>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-volt1">5138.093</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-power1">44</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbvolt1">74.22</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbpower1">16.43</output>
+                  </td>
+                </tr>
+                <tr>
+                  <th nowrap="nowrap">Напруга дБ</th>
+                  <td>
+                    <input type="nubmer" class="cd-mutualconv-plugin-value" id="cd-mutualconv-voltdb" value="0">
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectvoltdb">
+                      <option value="-12">dBpV</option>
+                      <option value="-9">dBnV</option>
+                      <option value="-6">dBμV</option>
+                      <option value="-3" selected="">dBmV</option>
+                      <option value="0">dBV</option>
+                    </select>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-volt2">3.98107170553492e+171</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-power2">Нескінченність</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbvolt2">3432.00</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbpower2">Нескінченність</output>
+                  </td>
+                </tr>
+                <tr>
+                  <th nowrap="nowrap">Потужність дБ</th>
+                  <td>
+                    <input type="nubmer" class="cd-mutualconv-plugin-value" id="cd-mutualconv-powerdb" value="0">
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectpowerdb">
+                      <option value="-12">dBpW</option>
+                      <option value="-9">dBnW</option>
+                      <option value="-6">dBμW</option>
+                      <option value="-3" selected="">dBmW</option>
+                      <option value="0">dBW</option>
+                    </select>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-volt3">1.228e+20</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-power3">2.511886431509572e+34</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbvolt3">401.78</output>
+                  </td>
+                  <td>
+                    <output class="cd-mutalconv-output" id="cd-mutualconversion-dbpower3">344.00</output>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectvolt_b">
+                      <option value="-12">pV</option>
+                      <option value="-9">nV</option>
+                      <option value="-6">μV</option>
+                      <option value="-3" selected="">mV</option>
+                      <option value="0">V</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectpower_b">
+                      <option value="-12">pW</option>
+                      <option value="-9">nW</option>
+                      <option value="-6">μW</option>
+                      <option value="-3" selected="">mW</option>
+                      <option value="0">W</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectvoltdb_b">
+                      <option value="-12">dBpV</option>
+                      <option value="-9">dBnV</option>
+                      <option value="-6">dBμV</option>
+                      <option value="-3" selected="">dBmV</option>
+                      <option value="0">dBV</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="cd-mutualconv-plugin-input" id="cd-mutualconv-selectpowerdb_b">
+                      <option value="-12">dBpW</option>
+                      <option value="-9">dBnW</option>
+                      <option value="-6">dBμW</option>
+                      <option value="-3" selected="">dBmW</option>
+                      <option value="0">dBW</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h2>Про взаємне перетворення напруги/потужності/децибел</h2>
+        <p>Ви можете виконати перетворення блоку живлення напруга/потужність/напруга децибел/децибел. Нормальні значення опору, що використовуються, становлять 50 Ом (радіо), 75 Ом (телевізор), 600 Ом (аудіо). Будь ласка, виберіть відповідне значення імпедансу відповідно до застосування.</p>
+        <h2>Довідка</h2>
+        <p>Зазвичай, коли використовуються значення «dBm», відображається «dBmW». Цей інструмент використовує PD (напруга на клемах) для виконання розрахунку. У разі ЕРС (напруга розімкнутого ланцюга) використовуйте перетворення нижче.</p>
+        <p>Напруга: PD = EMF напруга / 2
+          <br> dB: PD = EMF напруга – 6 dB</p>
+      </div>
+    </div>
+  </main>
+  <include src="src/templates/footer.html"></include>
+</body>
+</html>

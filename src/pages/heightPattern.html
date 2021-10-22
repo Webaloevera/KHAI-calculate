@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <include src="src/templates/head.html" locals='{"title": "Інструмент розрахунку шаблону висоти"}'></include>
+</head>
+<body>
+  <include src="src/templates/header.html"></include>
+  <main>
+    <div class="wrapper">
+      <include src="src/templates/toolsList.html"></include>
+      <div class="entry">
+        <h2 class="entry-title">Інструмент розрахунку шаблону висоти</h2>
+        <p>За допомогою введення частоти, висоти антени передавача та відстані зв'язку можна розрахувати крок діаграми висоти.</p>
+        <div id="cd-heightpattern-container">
+          <p>❶&nbsp;Введіть частоту користувача в МГц</p>
+          <p>Frequency&nbsp;
+            <input type="number" class="cd-heightpattern-input" id="cd-heightpattern-helz" value="429">&nbsp;МГц</p>
+          <br>
+          <p>❷&nbsp;Введіть висоту антени передавача в метрах</p>
+          <p>Висота&nbsp;
+            <input type="number" class="cd-heightpattern-input" id="cd-heightpattern-height" value="5">&nbsp;м</p>
+          <br>
+          <p>❸&nbsp;Введіть відстань зв'язку від базової станції в метрах</p>
+          <p>Відстань&nbsp;
+            <input type="number" class="cd-heightpattern-input" id="cd-heightpattern-distance" value="300">&nbsp;м</p>
+          <br>
+          <p>Висота кроку візерунка
+            <output id="cd-heightpattern-pitch" style="background: #eee">21.0 м</output>
+          </p>
+        </div>
+        <h2>Який крок шаблону висоти?</h2>
+        <p>Загальна потужність прийнятої хвилі через поєднання прямої та відбитої хвилі зміниться через різницю фаз. Така поведінка описується як шаблон висоти. Постійний інтервал між піками (або прогинами) на рівні, як показано на діаграмі нижче, є кроком візерунка. Вищі частоти (менші довжини хвиль) призводять до звуження інтервалів, а також до зміни відстані зв'язку.</p>
+        <div class="enter-img"><p><img loading="lazy" class="box-mt50mb50 alignnone wp-image-625 size-full" src="img/8.png" alt="" width="600" height="350">
+        </p></div>
+        <p>Іноді йдеться не лише про підняття антени вище. Після розміщення антени ви можете налаштувати висоту антени в межах цього значення кроку, щоб вона збігалася з максимальним значенням у діаграмі висоти.</p>
+      </div>
+    </div>
+  </main>
+  <include src="src/templates/footer.html"></include>
+</body>
+</html>

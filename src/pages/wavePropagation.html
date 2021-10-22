@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <include src="src/templates/head.html" locals='{"title": "Інструмент розрахунку поширення хвилі (для моделі вільного простору та двох хвиль)"}'></include>
+</head>
+
+<body>
+  <include src="src/templates/header.html"></include>
+  <main>
+    <div class="wrapper">
+      <include src="src/templates/toolsList.html"></include>
+      <div class="entry">
+        <h2 class="entry-title">Інструмент розрахунку поширення хвилі (для моделі вільного простору та двох хвиль)</h2>
+        <p>Вводячи параметри для частоти, потужності передачі та відстані, можна розрахувати характеристики поширення хвилі для вільного простору та 2-хвильової моделі.</p>
+        <!--// For html design //-->
+        <div id="cd-denpadenpan-container_en">
+          <p class="line-1px"><strong>Основні вхідні параметри</strong></p>
+          <p>❶&nbsp;
+Введіть радіочастоту в МГц</p>
+          <p>
+Частота&nbsp;
+            <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-helz" value="400">&nbsp;МГц</p>
+          <p>❷&nbsp;
+Введіть потужність радіопередачі в дБм</p>
+          <div style="white-space:nowrap">
+            <div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+              <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+              </div>
+              <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+              </div>
+            </div>
+            <p>Потужність передачі&nbsp;
+              <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-power" value="10">&nbsp;
+дБм&nbsp;--&gt;&nbsp;
+              <label id="cd-denpadenpan-mwpower">
+10.000 МВт</label>
+            </p>
+            <p>❸&nbsp;
+Введіть відстань поширення в метрах</p>
+            <p>
+Відстань&nbsp;
+              <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-distance" value="200">&nbsp;м</p>
+            <p class="line-1px"><strong>Розширені вхідні параметри</strong></p>
+            <p>❹&nbsp;Висота антени</p>
+            <p>На передавач&nbsp;
+              <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-antena_tx" value="2.0">&nbsp;м</p>
+            <p>At receiver&nbsp;
+              <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-antena_rx" value="2.0">&nbsp;м</p>
+            <p>❺&nbsp;Підсилення антени</p>
+            <p>На передавач&nbsp;
+              <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-gain_tx" value="2.14">&nbsp;дБі</p>
+            <p>У приймача&nbsp;
+              <input type="nubmer" class="denpadenpan-plugin-input" id="cd-denpadenpan-gain_rx" value="2.14">&nbsp;дБі</p>
+            <div class="toggle-buttons">
+              <label>
+                <input type="radio" name="denpadenpan-plugin-mode" class="denpadenpan-plugin-mode" value="freespace" checked="checked">
+                <span class="button">Вільний простір&nbsp;&nbsp;</span>
+              </label>
+              <label>
+                <input type="radio" name="denpadenpan-plugin-mode" class="denpadenpan-plugin-mode" value="twowave">
+                <span class="button">2-хвильова модель</span>
+              </label>
+            </div>
+            <div>
+              <p>
+                <input type="checkbox" class="denpadenpan-plugin-logmode" id="cd-denpadenpan-logmode" value="1">&nbsp;Журнал / лінійний</p>
+            </div>
+            <canvas id="denpadenpan_canvas_en" width="588" height="440" class="denpadenpan_canvas_en chartjs-render-monitor" style="display: block; height: 220px; width: 294px;"></canvas>
+          </div>
+          <!--// For html design //-->
+          <h2 class="line-1px-b">Пояснення моделі вільного простору та 2-хвильової моделі</h2>
+          <h3>Вільний простір</h3>
+          <p>Поширення в ідеальному вакуумі без відбиття хвилі. Теоретично отримана потужність падає з квадратом відстані.
+            <br><div class="enter-img"><img loading="lazy" class="alignnone wp-image-629 size-full box-mt50" src="img/1.png" alt="" width="600" height="190"></div>
+          </p>
+          <h3>
+2-хвильова модель</h3>
+          <p>Поширення по нескінченно плоскій відбивній поверхні. Інтерференція виникне в приймачі, коли дві хвилі зберуться: одна пройде прямий маршрут, а інша відбита. Якщо вони обидва сходяться з протилежною фазою, загальна отримана потужність буде меншою (мертва точка). Мертві точки виникають частіше на ближчій відстані до передавача. Щоб уникнути таких областей, приймач потрібно буде перемістити в місця, де рівень прийнятої потужності максимальний. Використовуючи вищі частоти (з меншою довжиною хвилі), кількість мертвих точок буде відбуватися швидше, особливо поблизу передавача.
+            <br><div class="enter-img"><img loading="lazy" class="box-mt50 alignnone wp-image-630 size-full" src="img/2.png" alt="" width="600" height="290"></div>
+          </p>
+          <p class="box-mt50">Насправді, від будівель та гір можуть виникати відблиски, що створюють багатопроменеве поширення (затримка прибуття хвилі), тому ситуація стає складнішою.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <include src="src/templates/footer.html"></include>
+</body>
+</html>
