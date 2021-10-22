@@ -1,6 +1,6 @@
 {
-	"name": "gulp-html",
-	"version": "v1",
+	"name": "gulp-template",
+	"version": "v1.1.3",
 	"author": "Dmitriy Cherenkov",
 	"license": "OI",
 	"scripts": {
